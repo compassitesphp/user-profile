@@ -18,3 +18,15 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+//route for technology
+Route::get('/tech','HomeController@techList');
+Route::get('/add','HomeController@doAddTech');
+Route::get('/add1','HomeController@tech1');
+//route for department
+
+Route::get('/dept','HomeController@deptlist');
+Route::get('/addDept','HomeController@doAddDept');
+Route::get('/addDept1','HomeController@dept1');
+
+Route::get('/emplist','HomeController@empList');
+Route::get('/addEmp','HomeController@doAddEmployee');
