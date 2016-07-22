@@ -104,7 +104,7 @@ class HomeController extends Controller
         return view('employeeForm',$result,$result1);
     }
     
-     
+     //storing the data entered through the form
     
     function newEmployee1(request $request)
     {
@@ -130,12 +130,23 @@ class HomeController extends Controller
          $employee->address=$employeeAddress;
          $employee->project= $employeeProject;
          $employee->reporting_manager=$employeeRepotManager;
+         
          $employee->dept_id=$employeeDept;
          
          $tech=new Technology;
          
         // $data['technology'][]=$request->input('tech_id');
          //$tech->id=$data['technology'][];//doubt
+         
+         
+         
+         //$techString = implode(",", $request->tech->input('id'));
+         //$tech1=technologies::where('id',$techString);
+         //foreach($tech1 as $technologies)
+           //  $tech1->employee1()->updateExistingPivot();
+         
+         
+         
          
          $employee->save();
          return redirect('/emplist');

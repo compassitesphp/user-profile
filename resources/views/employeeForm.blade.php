@@ -35,7 +35,7 @@
 
                 <div class="form-align">
                     <label for="cur" class="label-form">Emergency-No:</label>
-                    <input type="text" id="cur" name="cur" value="" required>
+                    <input type="text" id="cur" name="emergencyno" value="" required>
                 </div><br>
 
                 <div class="form-align">
@@ -79,6 +79,7 @@
                     <label for="currentDesignation"  class="label-form">Technologies:</label>
 
                     <div class="checkbox">
+                        
                         @foreach($response1 as $technologyData)
                         <label><input type="checkbox">{{$technologyData->tech_name}}</label>
                         @endforeach
@@ -88,7 +89,7 @@
 
                 <div class="form-align">
                     <label for="cur" class="label-form">Project:</label>
-                    <input type="text" id="cur" name="cur" value="" required>
+                    <input type="text" id="cur" name="project" value="" required>
                 </div><br>
 
                 <div class="form-align">
