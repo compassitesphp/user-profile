@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                 <div class="panel-body">
-                    <a href="#" class="btn btn-primary">List of Employee</a>
+                    <a href="" class="btn btn-primary">List of Employee</a>
                     <a href="#" class="btn btn-primary">Department</a>
                     <a href="#" class="btn btn-primary">Technologies</a>
                 </div>
