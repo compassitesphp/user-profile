@@ -27,9 +27,11 @@ Route::get('/add1','HomeController@tech1');
 Route::get('/dept','HomeController@deptlist');
 Route::get('/addDept','HomeController@doAddDept');
 Route::get('/addDept1','HomeController@dept1');
+
 //route for adding new employee
 Route::get('/emplist','HomeController@empList');
 Route::get('/addEmp','HomeController@doAddEmployee');
+Route::get('/newEmp','HomeController@newEmployee1');
 
 //route for editing employee form
 

@@ -15,7 +15,7 @@
 
     <body>
 
-        <form action="listEmployee" method="GET">
+        <form action="listEmployee" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>Employee Profile</legend><br>
                 <div class="form-align">

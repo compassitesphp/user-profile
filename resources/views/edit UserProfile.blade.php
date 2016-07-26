@@ -15,7 +15,7 @@
 
     <body>
 
-        <form action="/emplist" method="GET">
+        <form action="/emplist" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>Employee Profile</legend><br>
                 <div class="form-align">
@@ -96,7 +96,7 @@
                         @else
                         {
                         
-                            <label><input type="checkbox">{{$technologyData->tech_name}}</label>/////////////////////
+                        <label><input type="checkbox">{{$technologyData->tech_name}}</label>{{--doubt regarding technology is checked or uncheked--}}
                         }
                         @endif
                         @endforeach
@@ -117,7 +117,7 @@
                     <div class="js-preview userpic__preview"></div>
                     <div class="btn btn-success js-fileapi-wrapper">
                         <div class="js-browse">
-                            <span class="btn-txt">Upload Photo:</span>////////////////////////////
+                            <span class="btn-txt">Upload Photo:</span>{{--doubt regarding up;oading photo--}}
                             <input name="filedata" type="file">
                         </div>
                         <div class="js-upload" style="display: none;">
