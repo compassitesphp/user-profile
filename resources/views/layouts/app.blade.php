@@ -21,15 +21,17 @@
             }
 
             .fa-btn {
-                margin-right: 6px;
+                margin-right: 2px;
             }
-          
+             .fa-btn {
+                margin-left: 8px;
+            }
         </style>
     </head>
     <body id="app-layout">
 
         <nav class="navbar navbar-default navbar-static-top">
-           
+
             <div class="container">
                 <div class="navbar-header">
 
@@ -52,7 +54,8 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}"><h3>Home</h3></a></li>
+<!--                         <img src="{{asset('/assests/images/h.jpg')}}" height ="5%" width="15%"/>-->
+                        <a href="{{ url('/home') }}"><h3>Home</h3></a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
