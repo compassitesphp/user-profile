@@ -99,9 +99,9 @@ class HomeController extends Controller
         $result['response']=$dept->all();//extracting list of department from department table
          
         $tech=new Technology;
-        $result1['response1']=$tech->all();//extracting list of technology from technology table
+        $result['response1']=$tech->all();//extracting list of technology from technology table
        
-        return view('employeeForm',$result,$result1);
+        return view('employeeForm',$result);
     }
     
      //storing the data entered through the form
@@ -111,11 +111,11 @@ class HomeController extends Controller
          $employeeName=$request->input('employee_name');
          $employeeEmail=$request->input('employee_email');
          $employeeMobile=$request->input('mobile');
-         $employeeDoj=$request->input(' doj ');
+         $employeeDoj=$request->input('doj');
          $employeeDesignation=$request->input('designation');
-         $employeeEmergencyNo=$request->input(' emergency_no');
+         $employeeEmergencyNo=$request->input('emergency_no');
          $employeeAddress=$request->input('address ');
-         $employeeProject=$request->input(' project');
+         $employeeProject=$request->input('project');
          $employeeRepotManager=$request->input('reporting_manager');
          $employeeDept=$request->input('dept_id');
          
@@ -151,4 +151,58 @@ class HomeController extends Controller
          $employee->save();
          return redirect('/emplist');
     }
+    
+    function doProfileEdit($id)
+    {
+
+	$employee=new EmpList;
+	$emp=$employee->find($id);
+	$data['employeeName']=$emp->employee_name ;
+	$data['employeeName']=$emp->employee_email ;
+	$data['employeeName']=$emp->mobile ;
+	$data['employeeName']=$emp->doj   ;
+	$data['employeeName']=$emp-> designation  ;
+	$data['employeeName']=$emp->emergency_no  ;
+	$data['employeeName']=$emp->address ;
+	$data['employeeName']=$emp-> project    ;
+	$data['employeeName']=$emp->reporting_manager ;
+	$data['employeeName']=$emp-> dept_id  ;
+	
+       return view('editUserProfile',$data);
+    }
+
+    function editprofile(Request $request)
+    {
+		
+	 $employeeName=$request->input('employee_name');
+         $employeeEmail=$request->input('employee_email');
+         $employeeMobile=$request->input('mobile');
+         $employeeDoj=$request->input(' doj ');
+         $employeeDesignation=$request->input('designation');
+         $employeeEmergencyNo=$request->input(' emergency_no');
+         $employeeAddress=$request->input('address ');
+         $employeeProject=$request->input(' project');
+         $employeeRepotManager=$request->input('reporting_manager');
+         $employeeDept=$request->input('dept_id');
+	 $employeeId=$request->input('id');
+
+
+	 $employee=new EmpList;
+         $employee->employee_name=$employeeName;
+         $employee->employee_email=$employeeEmail;
+         $employee->mobile=$employeeMobile;
+         $employee->doj= $employeeDoj;
+         $employee->designation= $employeeDesignation;
+         $employee->emergency_no= $employeeEmergencyNo;
+         $employee->address=$employeeAddress;
+         $employee->project= $employeeProject;
+         $employee->reporting_manager=$employeeRepotManager;
+         
+         $employee->dept_id=$employeeDept;
+
+	 $employee->where('id',$employeeId)->update($data);
+	 return redirect('/emplist');
+
+	}
+    
 }
